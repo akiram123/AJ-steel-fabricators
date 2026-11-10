@@ -667,6 +667,7 @@ footer strong {
     </div>
 
     <div class="grid gallery">
+
         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85" alt="House design">
 
         <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Residential building">
@@ -678,6 +679,7 @@ footer strong {
         <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="Commercial building">
 
         <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=85" alt="Modern residential building">
+
     </div>
 
     <p style="text-align:center;color:#999;margin-top:18px;font-size:13px;">
@@ -692,6 +694,7 @@ footer strong {
     </div>
 
     <div class="grid">
+
         <div class="why-card">
             <div style="font-size:32px">🛠️</div>
             <h3>Custom Work</h3>
@@ -709,10 +712,12 @@ footer strong {
             <h3>Quality Finishing</h3>
             <p>Attention to detail in every project.</p>
         </div>
+
     </div>
 </section>
 
 <section class="quote" id="quote">
+
     <div class="quote-container">
 
         <div class="title">
@@ -769,8 +774,9 @@ footer strong {
             </button>
 
             <p class="upload-help">
-                Your selected picture will be shared through WhatsApp
-                where supported. Otherwise, attach it manually in the chat.
+                Your selected picture can be shared through your phone's
+                sharing menu where supported. Otherwise, attach it manually
+                in the WhatsApp chat.
             </p>
 
         </form>
@@ -778,6 +784,7 @@ footer strong {
 </section>
 
 <section class="contact" id="contact">
+
     <div class="title">
         <small>GET IN TOUCH</small>
         <h2>CONTACT AJ STEEL</h2>
@@ -785,6 +792,7 @@ footer strong {
     </div>
 
     <div class="grid">
+
         <div class="contact-card">
             <h3>PHONE / WHATSAPP</h3>
             <p>+256 705 434 720</p>
@@ -799,6 +807,7 @@ footer strong {
             <h3>SERVICES</h3>
             <p>Residential, Commercial & Industrial Fabrication</p>
         </div>
+
     </div>
 
     <div style="margin-top:30px">
@@ -806,23 +815,29 @@ footer strong {
             CHAT WITH US
         </a>
     </div>
+
 </section>
 
 <footer>
     <strong>AJ STEEL & METAL FABRICATORS</strong>
     <p>Strength • Quality • Creativity</p>
     <p>Katwe, Kampala, Uganda</p>
+
     <p style="margin-top:15px;font-size:12px">
         © <span id="year"></span> AJ Steel & Metal Fabricators.
         All rights reserved.
     </p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/256705434720" target="_blank">
+<a class="whatsapp"
+   href="https://wa.me/256705434720"
+   target="_blank"
+   rel="noopener">
     WhatsApp Us
 </a>
 
 <script>
+
 function toggleMenu() {
     document.getElementById("nav").classList.toggle("active");
 }
@@ -836,20 +851,21 @@ document.querySelectorAll("#nav a").forEach(link => {
 document.getElementById("year").textContent =
     new Date().getFullYear();
 
+
+/* IMAGE PREVIEW */
+
 const imageInput = document.getElementById("designImage");
 const preview = document.getElementById("imagePreview");
-const form = document.getElementById("quoteForm");
-const sendButton = document.getElementById("sendButton");
-
-let selectedImage = null;
 
 imageInput.addEventListener("change", function() {
+
     const file = this.files[0];
 
-    selectedImage = null;
-    preview.style.display = "none";
-
-    if (!file) return;
+    if (!file) {
+        preview.style.display = "none";
+        preview.src = "";
+        return;
+    }
 
     if (!file.type.startsWith("image/")) {
         alert("Please select an image.");
@@ -858,12 +874,10 @@ imageInput.addEventListener("change", function() {
     }
 
     if (file.size > 10 * 1024 * 1024) {
-        alert("Image must be smaller than 10MB.");
+        alert("Your picture is too large. Maximum size is 10MB.");
         this.value = "";
         return;
     }
-
-    selectedImage = file;
 
     const reader = new FileReader();
 
@@ -873,9 +887,14 @@ imageInput.addEventListener("change", function() {
     };
 
     reader.readAsDataURL(file);
+
 });
 
-form.addEventListener("submit", async function(event) {
+
+/* QUOTATION FORM */
+
+document.getElementById("quoteForm").addEventListener("submit", async function(event) {
+
     event.preventDefault();
 
     const name = document.getElementById("customerName").value.trim();
@@ -883,54 +902,79 @@ form.addEventListener("submit", async function(event) {
     const service = document.getElementById("service").value;
     const location = document.getElementById("projectLocation").value.trim();
     const details = document.getElementById("projectDetails").value.trim();
+    const image = imageInput.files[0];
+
+    if (!name || !phone || !service || !details) {
+        alert("Please complete all required fields.");
+        return;
+    }
 
     const message =
-`Hello AJ Steel & Metal Fabricators.
+`AJ STEEL & METAL FABRICATORS
+QUOTATION REQUEST
 
-I would like to request a quotation.
-
-Name: ${name}
+Customer: ${name}
 Phone: ${phone}
 Service: ${service}
-Project location: ${location}
+Project location: ${location || "Not provided"}
 
 Project details:
 ${details}
 
-${selectedImage ? "I have selected a reference design picture." : "I have no reference picture yet."}`;
+Please contact me about this project.
+
+Sent through the AJ Steel website.`;
+
 
     const whatsappURL =
         "https://wa.me/256705434720?text=" +
         encodeURIComponent(message);
 
-    sendButton.disabled = true;
-    sendButton.textContent = "OPENING WHATSAPP...";
 
-    try {
-        if (selectedImage && navigator.share && navigator.canShare) {
+    if (image && navigator.share && navigator.canShare) {
+
+        try {
+
+            const fileToShare = new File(
+                [image],
+                image.name,
+                { type: image.type }
+            );
+
             const shareData = {
                 title: "AJ Steel Quotation Request",
                 text: message,
-                files: [selectedImage]
+                files: [fileToShare]
             };
 
-            if (navigator.canShare({files:[selectedImage]})) {
+            if (navigator.canShare({ files: [fileToShare] })) {
+
                 await navigator.share(shareData);
                 return;
+
             }
+
+        } catch (error) {
+
+            if (error.name === "AbortError") {
+                return;
+            }
+
         }
 
-        window.location.href = whatsappURL;
-
-    } catch(error) {
-        if (error.name !== "AbortError") {
-            window.location.href = whatsappURL;
-        }
-    } finally {
-        sendButton.disabled = false;
-        sendButton.textContent = "SEND QUOTATION REQUEST";
     }
+
+    if (image) {
+        alert(
+            "Your quotation message will open in WhatsApp. " +
+            "Please attach your selected picture manually in the chat."
+        );
+    }
+
+    window.open(whatsappURL, "_blank");
+
 });
+
 </script>
 
 </body>
