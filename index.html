@@ -3,319 +3,525 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
 
-<title>AJ Steel & Metal Fabricators | Kampala</title>
+<title>AJ Steel & Metal Fabricators | Kampala Uganda</title>
 
-<meta name="description" content="AJ Steel & Metal Fabricators in Katwe, Kampala. Gates, windows, roller shutters, pergolas, canopies, metal furniture, welding and repairs.">
+<meta name="description" content="AJ Steel & Metal Fabricators in Katwe, Kampala. Professional steel gates, windows, roller shutters, doors, railings, canopies and custom metal fabrication.">
+
+<meta name="theme-color" content="#101010">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-
-:root{
---gold:#d6ad55;
---black:#080808;
---dark:#151515;
---white:#fff;
---grey:#aaa;
+:root {
+    --black: #101010;
+    --dark: #191919;
+    --gold: #d4a843;
+    --silver: #c7c7c7;
+    --white: #ffffff;
 }
 
-html{scroll-behavior:smooth}
-
-body{
-background:var(--black);
-color:white;
-font-family:Arial,sans-serif;
-line-height:1.6;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-a{text-decoration:none;color:inherit}
-
-header{
-background:#050505;
-padding:15px 6%;
-display:flex;
-align-items:center;
-justify-content:space-between;
-border-bottom:2px solid var(--gold);
-position:sticky;
-top:0;
-z-index:100;
+body {
+    font-family: Arial, sans-serif;
+    background: #101010;
+    color: white;
+    line-height: 1.6;
 }
 
-.logo{
-font-size:23px;
-font-weight:900;
-color:var(--gold);
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.logo span{
-display:block;
-font-size:11px;
-color:white;
-letter-spacing:3px;
+header {
+    background: rgba(12,12,12,.97);
+    padding: 17px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #b58b35;
 }
 
-nav{
-display:flex;
-gap:22px;
-align-items:center;
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: var(--gold);
 }
 
-nav a{font-size:13px}
-nav a:hover{color:var(--gold)}
-
-.button{
-display:inline-block;
-background:var(--gold);
-color:#111;
-padding:12px 22px;
-border-radius:5px;
-font-weight:bold;
-border:none;
-cursor:pointer;
+.logo span {
+    display: block;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 3px;
 }
 
-.hero{
-min-height:540px;
-display:flex;
-align-items:center;
-padding:70px 8%;
-background:
-linear-gradient(90deg,#000 5%,rgba(0,0,0,.82) 48%,rgba(0,0,0,.15)),
-url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1800&q=85')
-center/cover;
+nav {
+    display: flex;
+    gap: 22px;
+    align-items: center;
 }
 
-.hero-content{max-width:600px}
-
-.hero h1{
-font-size:clamp(38px,6vw,68px);
-line-height:1.08;
-margin-bottom:20px;
+nav a {
+    font-size: 14px;
+    transition: .3s;
 }
 
-.hero h1 span{color:var(--gold)}
-
-.hero p{
-color:#ddd;
-margin-bottom:25px;
-font-size:16px;
+nav a:hover {
+    color: var(--gold);
 }
 
-.gold{color:var(--gold)}
-
-.section{
-padding:75px 7%;
+.menu-btn {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: var(--gold);
 }
 
-.heading{
-text-align:center;
-margin-bottom:40px;
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background:
+    linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85")
+    center/cover no-repeat;
 }
 
-.heading h2{
-font-size:34px;
-color:var(--gold);
+.hero-content {
+    max-width: 680px;
 }
 
-.heading p{color:var(--grey)}
-
-.services{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:22px;
+.tag {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
 }
 
-.card{
-background:var(--dark);
-border:1px solid #333;
-border-radius:7px;
-overflow:hidden;
-transition:.3s;
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.12;
+    margin: 20px 0;
 }
 
-.card:hover{
-transform:translateY(-6px);
-border-color:var(--gold);
+.hero h1 span {
+    color: var(--gold);
 }
 
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
+.hero p {
+    color: #ddd;
+    font-size: 17px;
+    max-width: 580px;
 }
 
-.card-content{padding:20px}
-
-.card h3{
-color:var(--gold);
-margin-bottom:8px;
+.buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
-.card p{
-color:#bbb;
-font-size:14px;
-margin-bottom:15px;
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    background: var(--gold);
+    color: #111;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: .3s;
 }
 
-.card a{
-color:var(--gold);
-font-size:13px;
-font-weight:bold;
+.btn:hover {
+    background: white;
+    transform: translateY(-3px);
 }
 
-.gallery{
-background:#141414;
+.btn-outline {
+    border: 1px solid var(--gold);
+    color: white;
+    background: transparent;
 }
 
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
+section {
+    padding: 75px 7%;
 }
 
-.gallery-grid img{
-width:100%;
-height:230px;
-object-fit:cover;
-border:1px solid #444;
-border-radius:5px;
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.about{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
+.section-title small {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-weight: bold;
 }
 
-.about img{
-width:100%;
-border-radius:6px;
+.section-title h2 {
+    font-size: 34px;
+    margin-top: 10px;
 }
 
-.about h2{
-font-size:35px;
-color:var(--gold);
-margin-bottom:15px;
+.section-title p {
+    color: #aaa;
+    margin-top: 8px;
 }
 
-.about p{color:#bbb;margin-bottom:15px}
-
-.about li{
-margin:10px 0;
-list-style:none;
+.about {
+    background: #191919;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
 }
 
-.about li:before{
-content:"✓ ";
-color:var(--gold);
-font-weight:bold;
+.about img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 7px;
 }
 
-.quote{
-background:#171717;
+.about h2 {
+    font-size: 34px;
+    margin-bottom: 18px;
 }
 
-.form-box{
-max-width:750px;
-margin:auto;
-background:#080808;
-padding:30px;
-border:1px solid #444;
-border-radius:8px;
+.about h2 span {
+    color: var(--gold);
 }
 
-.form-box input,
-.form-box select,
-.form-box textarea{
-width:100%;
-padding:14px;
-margin:9px 0 16px;
-background:#202020;
-color:white;
-border:1px solid #444;
-border-radius:4px;
-font-size:14px;
+.about p {
+    color: #ccc;
+    margin-bottom: 15px;
 }
 
-.form-box label{
-color:var(--gold);
-font-size:13px;
-font-weight:bold;
+.features {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 14px;
+    margin-top: 20px;
 }
 
-.form-box button{width:100%}
-
-.form-note{
-font-size:11px;
-color:#999;
-margin-top:12px;
+.feature {
+    border-left: 3px solid var(--gold);
+    padding: 10px 14px;
+    background: #242424;
 }
 
-.contact{
-text-align:center;
+/* SERVICES */
+
+.services {
+    background: #101010;
 }
 
-.contact h2{
-color:var(--gold);
-font-size:34px;
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
 }
 
-.contact p{
-margin:12px;
-color:#ccc;
+.service-card {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 7px;
+    overflow: hidden;
+    transition: .3s;
 }
 
-footer{
-background:#030303;
-border-top:2px solid var(--gold);
-padding:35px 7%;
-text-align:center;
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
 }
 
-footer h2{color:var(--gold)}
-
-footer p{
-color:#aaa;
-font-size:13px;
-margin:8px;
+.service-card img {
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
 }
 
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#20bd62;
-color:white;
-padding:14px 20px;
-border-radius:40px;
-font-weight:bold;
-z-index:200;
+.service-card div {
+    padding: 20px;
 }
 
-@media(max-width:800px){
-header{flex-wrap:wrap;gap:15px}
-nav{
-width:100%;
-overflow-x:auto;
-gap:18px;
-padding-bottom:5px;
-}
-nav a{white-space:nowrap}
-.services{grid-template-columns:repeat(2,1fr)}
-.gallery-grid{grid-template-columns:repeat(2,1fr)}
-.about{grid-template-columns:1fr}
+.service-card h3 {
+    color: var(--gold);
+    margin-bottom: 9px;
 }
 
-@media(max-width:500px){
-.hero{min-height:480px;padding:50px 7%}
-.hero h1{font-size:42px}
-.services{grid-template-columns:1fr}
-.gallery-grid{grid-template-columns:1fr}
-.section{padding:55px 6%}
-.form-box{padding:20px}
+.service-card p {
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* BUILDINGS */
+
+.buildings {
+    background: #191919;
+}
+
+.building-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.building-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 7px;
+    height: 260px;
+}
+
+.building-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.building-card:hover img {
+    transform: scale(1.08);
+}
+
+.building-card h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 35px 15px 17px;
+    background: linear-gradient(transparent,rgba(0,0,0,.95));
+}
+
+/* GALLERY */
+
+.gallery {
+    background: #101010;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.025);
+}
+
+/* WHY US */
+
+.why {
+    background: #191919;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.why-card {
+    padding: 25px 15px;
+    background: #242424;
+    border-radius: 6px;
+}
+
+.why-card h3 {
+    color: var(--gold);
+    margin: 12px 0;
+}
+
+.why-card p {
+    color: #bbb;
+    font-size: 14px;
+}
+
+.icon {
+    font-size: 32px;
+}
+
+/* QUOTATION */
+
+.quote {
+    background:
+    linear-gradient(rgba(0,0,0,.91),rgba(0,0,0,.93)),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
+
+.quote-container {
+    max-width: 750px;
+    margin: auto;
+}
+
+.quote form {
+    display: grid;
+    gap: 15px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 15px;
+    background: #242424;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 1px solid var(--gold);
+}
+
+.quote button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.note {
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* CONTACT */
+
+.contact {
+    background: #191919;
+    text-align: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.contact-box {
+    background: #242424;
+    padding: 25px;
+    border-radius: 6px;
+}
+
+.contact-box h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #080808;
+    padding: 30px 7%;
+    text-align: center;
+    color: #aaa;
+    border-top: 1px solid #333;
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 22px;
+    right: 20px;
+    background: #20c765;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 40px;
+    font-weight: bold;
+    z-index: 999;
+    box-shadow: 0 4px 15px #0008;
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #111;
+        padding: 25px;
+        flex-direction: column;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid,
+    .building-grid,
+    .gallery-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:550px) {
+    section {
+        padding: 55px 5%;
+    }
+
+    .service-grid,
+    .building-grid,
+    .gallery-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 520px;
+        padding: 60px 6%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .about img {
+        height: 270px;
+    }
+
+    .gallery-grid img {
+        height: 240px;
+    }
 }
 </style>
 </head>
@@ -323,348 +529,442 @@ nav a{white-space:nowrap}
 <body>
 
 <header>
+    <a href="#" class="logo">
+        AJ STEEL
+        <span>& METAL FABRICATORS</span>
+    </a>
 
-<div class="logo">
-AJ STEEL
-<span>& METAL FABRICATORS</span>
-</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#gallery">Projects</a>
-<a href="#about">About</a>
-<a href="#quote">Get Quote</a>
-<a href="#contact">Contact</a>
-</nav>
-
+    <nav id="navigation">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#services" onclick="closeMenu()">Services</a>
+        <a href="#buildings" onclick="closeMenu()">Buildings</a>
+        <a href="#gallery" onclick="closeMenu()">Gallery</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
 </header>
 
 <!-- HERO -->
 
 <section class="hero" id="home">
+    <div class="hero-content">
+        <div class="tag">KATWE • KAMPALA • UGANDA</div>
 
-<div class="hero-content">
+        <h1>
+            STRONG METALWORK.<br>
+            <span>BUILT TO LAST.</span>
+        </h1>
 
-<p class="gold">STRENGTH • QUALITY • CREATIVITY</p>
+        <p>
+            Professional steel fabrication, gates, windows,
+            roller shutters, railings and custom metal solutions
+            for homes and businesses.
+        </p>
 
-<h1>
-WE TURN METAL INTO
-<span>MASTERPIECES.</span>
-</h1>
+        <div class="buttons">
+            <a class="btn" href="#quote">REQUEST A QUOTE</a>
 
-<p>
-From modern gates and security doors to roller shutters,
-pergolas, windows, metal furniture and custom fabrication,
-we deliver quality workmanship built to last.
-</p>
-
-<a href="#services" class="button">EXPLORE OUR SERVICES</a>
-
-<a href="https://wa.me/256705434720"
-class="button">WHATSAPP US</a>
-
-</div>
-</section>
-
-<!-- SERVICES -->
-
-<section class="section" id="services">
-
-<div class="heading">
-<h2>OUR SERVICES</h2>
-<p>Professional metal fabrication and welding solutions.</p>
-</div>
-
-<div class="services">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85">
-<div class="card-content">
-<h3>Gates & Security</h3>
-<p>Sliding gates, swing gates, modern gates and security doors.</p>
-<a href="#quote">REQUEST A QUOTE →</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85">
-<div class="card-content">
-<h3>Windows & Grills</h3>
-<p>Steel windows, burglar-proof windows and decorative grills.</p>
-<a href="#quote">REQUEST A QUOTE →</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85">
-<div class="card-content">
-<h3>Roller Shutters</h3>
-<p>Commercial shutters, shop shutters, fitting and repairs.</p>
-<a href="#quote">REQUEST A QUOTE →</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85">
-<div class="card-content">
-<h3>Canopies & Pergolas</h3>
-<p>Beautiful outdoor structures, shade frames and canopies.</p>
-<a href="#quote">REQUEST A QUOTE →</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=85">
-<div class="card-content">
-<h3>Gatic Doors & Fences</h3>
-<p>Metal doors, security fences and custom steel structures.</p>
-<a href="#quote">REQUEST A QUOTE →</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85">
-<div class="card-content">
-<h3>Balcony Grills & Railings</h3>
-<p>Modern balcony grills, staircase railings and handrails.</p>
-<a href="#quote">REQUEST A QUOTE →</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=85">
-<div class="card-content">
-<h3>Metal Beds</h3>
-<p>Custom-made beds and different metal furniture designs.</p>
-<a href="#quote">REQUEST A QUOTE →</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1593085260707-5377ba37f868?auto=format&fit=crop&w=900&q=85">
-<div class="card-content">
-<h3>Shoe Racks & Shelves</h3>
-<p>Strong metal shoe racks, shelves and storage solutions.</p>
-<a href="#quote">REQUEST A QUOTE →</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=85">
-<div class="card-content">
-<h3>Welding & Repairs</h3>
-<p>General welding, installation, maintenance and repairs.</p>
-<a href="#quote">REQUEST A QUOTE →</a>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- PROJECT GALLERY -->
-
-<section class="section gallery" id="gallery">
-
-<div class="heading">
-<h2>OUR PROJECT INSPIRATION</h2>
-<p>Explore designs and ideas for your next project.</p>
-</div>
-
-<div class="gallery-grid">
-
-<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Modern home design">
-
-<img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=85" alt="Modern architecture">
-
-<img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=900&q=85" alt="Interior design">
-
-<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" alt="Modern house">
-
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Residential entrance">
-
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85" alt="Outdoor architecture">
-
-</div>
-
-<p style="text-align:center;color:#888;font-size:11px;margin-top:20px">
-These are illustrative reference images, not verified photographs of our completed projects.
-</p>
-
+            <a class="btn btn-outline"
+            href="https://wa.me/256705434720">
+                CHAT ON WHATSAPP
+            </a>
+        </div>
+    </div>
 </section>
 
 <!-- ABOUT -->
 
-<section class="section about" id="about">
+<section class="about" id="about">
 
-<div>
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85" alt="Construction and fabrication environment">
-</div>
+    <img
+    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+    alt="Modern residential building">
 
-<div>
+    <div>
+        <div class="tag">WHO WE ARE</div>
 
-<h2>ABOUT AJ STEEL</h2>
+        <h2>
+            Quality Metalwork.<br>
+            <span>Reliable Craftsmanship.</span>
+        </h2>
 
-<p>
-AJ Steel & Metal Fabricators is based in Katwe, Kampala, Uganda.
-We specialise in metal fabrication, welding, repairs and installation.
-</p>
+        <p>
+            AJ Steel & Metal Fabricators provides metal fabrication
+            solutions for residential, commercial and industrial
+            projects in Kampala and beyond.
+        </p>
 
-<p>
-Whether you have your own design or need help developing an idea,
-contact us and tell us what you want fabricated.
-</p>
+        <p>
+            From secure gates and burglar-proof windows to modern
+            railings, doors, canopies and custom steel structures,
+            we work to bring your ideas to life.
+        </p>
 
-<ul>
-<li>Custom fabrication</li>
-<li>Welding and repairs</li>
-<li>Residential and commercial work</li>
-<li>Metal furniture</li>
-<li>Installation services</li>
-</ul>
-
-<a href="#quote" class="button">START YOUR PROJECT</a>
-
-</div>
+        <div class="features">
+            <div class="feature">✓ Custom Designs</div>
+            <div class="feature">✓ Quality Finishing</div>
+            <div class="feature">✓ Repairs & Installation</div>
+            <div class="feature">✓ Customer Satisfaction</div>
+        </div>
+    </div>
 </section>
 
-<!-- QUOTATION -->
+<!-- SERVICES -->
 
-<section class="section quote" id="quote">
+<section class="services" id="services">
 
-<div class="heading">
-<h2>REQUEST A QUOTATION</h2>
-<p>Tell us what you want made. We will receive your enquiry on WhatsApp.</p>
-</div>
+    <div class="section-title">
+        <small>WHAT WE DO</small>
+        <h2>OUR SERVICES</h2>
+        <p>Metal fabrication solutions for every project.</p>
+    </div>
 
-<form class="form-box" id="quoteForm">
+    <div class="service-grid">
 
-<label>Full Name</label>
-<input type="text" id="name" required placeholder="Enter your name">
+        <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85" alt="Residential home">
+            <div>
+                <h3>Steel Gates</h3>
+                <p>Sliding gates, swing gates, security gates and custom entrance designs.</p>
+            </div>
+        </article>
 
-<label>Phone Number</label>
-<input type="tel" id="phone" required placeholder="Your phone number">
+        <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="House windows">
+            <div>
+                <h3>Windows & Burglar Proofing</h3>
+                <p>Strong steel window frames, security grills and custom window protection.</p>
+            </div>
+        </article>
 
-<label>Choose Service</label>
+        <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=85" alt="Modern building">
+            <div>
+                <h3>Roller Shutters</h3>
+                <p>Security shutters for shops, garages, warehouses and commercial premises.</p>
+            </div>
+        </article>
 
-<select id="service" required>
-<option value="">Select a service</option>
-<option>Gates</option>
-<option>Windows</option>
-<option>Roller Shutters</option>
-<option>Canopies</option>
-<option>Pergolas</option>
-<option>Gatic Doors</option>
-<option>Balcony Grills</option>
-<option>Fences</option>
-<option>Metal Beds</option>
-<option>Shoe Racks</option>
-<option>Other Fabrication</option>
-<option>Welding and Repairs</option>
-</select>
+        <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Modern home interior">
+            <div>
+                <h3>Balcony Grills & Railings</h3>
+                <p>Beautiful and secure steel balcony railings and staircase handrails.</p>
+            </div>
+        </article>
 
-<label>Measurements</label>
-<input type="text" id="measurements" placeholder="Example: 3 metres wide">
+        <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" alt="Residential property">
+            <div>
+                <h3>Canopies & Pergolas</h3>
+                <p>Custom steel structures for parking areas, entrances and outdoor spaces.</p>
+            </div>
+        </article>
 
-<label>Project Location</label>
-<input type="text" id="location" placeholder="Where is the work needed?">
+        <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=85" alt="Modern house">
+            <div>
+                <h3>Steel Doors & Gatic Doors</h3>
+                <p>Strong metal doors, access covers and custom security solutions.</p>
+            </div>
+        </article>
 
-<label>Describe Your Project</label>
-<textarea id="details" rows="5" required placeholder="Describe the design and work you need..."></textarea>
+        <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=85" alt="Modern furniture">
+            <div>
+                <h3>Metal Furniture</h3>
+                <p>Custom beds, shoe racks, shelves, tables, chairs and other metal furniture.</p>
+            </div>
+        </article>
 
-<label>Upload Design / Photo (Optional)</label>
-<input type="file" id="photo" accept="image/*">
+        <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Residential property">
+            <div>
+                <h3>Steel Fences</h3>
+                <p>Perimeter fencing, compound security and custom steel boundary solutions.</p>
+            </div>
+        </article>
 
-<button type="submit" class="button">
-SEND QUOTATION REQUEST
-</button>
+        <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85" alt="Building project">
+            <div>
+                <h3>Welding & Repairs</h3>
+                <p>General welding, maintenance, metal repairs and installation services.</p>
+            </div>
+        </article>
 
-<p class="form-note">
-After WhatsApp opens, attach your selected design photo manually if you have one.
-</p>
+    </div>
+</section>
 
-</form>
+<!-- BUILDING TYPES -->
 
+<section class="buildings" id="buildings">
+
+    <div class="section-title">
+        <small>OUR APPLICATIONS</small>
+        <h2>BUILT FOR EVERY PROPERTY</h2>
+        <p>Metal solutions for Ugandan homes and businesses.</p>
+    </div>
+
+    <div class="building-grid">
+
+        <div class="building-card">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85" alt="Modern residential house">
+            <h3>Modern Residential Homes</h3>
+        </div>
+
+        <div class="building-card">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Residential home">
+            <h3>Family Homes</h3>
+        </div>
+
+        <div class="building-card">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85" alt="Commercial building">
+            <h3>Commercial Buildings</h3>
+        </div>
+
+        <div class="building-card">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="Office building">
+            <h3>Offices & Institutions</h3>
+        </div>
+
+        <div class="building-card">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85" alt="Business premises">
+            <h3>Business Premises</h3>
+        </div>
+
+        <div class="building-card">
+            <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=85" alt="Modern architecture">
+            <h3>Apartment Buildings</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+    <div class="section-title">
+        <small>DESIGN INSPIRATION</small>
+        <h2>PROJECT GALLERY</h2>
+        <p>Examples of building styles and design ideas for your next project.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85" alt="Modern house design">
+
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Residential building design">
+
+        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=85" alt="Modern architecture">
+
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85" alt="Home design">
+
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="Commercial property">
+
+        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=85" alt="Residential building">
+
+    </div>
+
+    <p style="text-align:center;color:#999;margin-top:20px;font-size:13px;">
+        Images are illustrative design references, not verified AJ Steel completed projects.
+    </p>
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="why">
+
+    <div class="section-title">
+        <small>OUR PROMISE</small>
+        <h2>WHY CHOOSE AJ STEEL?</h2>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <div class="icon">🛠️</div>
+            <h3>Custom Work</h3>
+            <p>Solutions designed around your requirements.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="icon">🏗️</div>
+            <h3>Strong Designs</h3>
+            <p>Functional steelwork for homes and businesses.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="icon">✨</div>
+            <h3>Quality Finishing</h3>
+            <p>Attention to detail in every project.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="icon">🤝</div>
+            <h3>Customer Focus</h3>
+            <p>We listen to your ideas and project needs.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- QUOTE FORM -->
+
+<section class="quote" id="quote">
+
+    <div class="quote-container">
+
+        <div class="section-title">
+            <small>START YOUR PROJECT</small>
+            <h2>REQUEST A FREE QUOTATION</h2>
+            <p>Tell us what you want fabricated. We'll discuss your requirements.</p>
+        </div>
+
+        <form id="quoteForm">
+
+            <input type="text" id="customerName"
+            placeholder="Your full name" required>
+
+            <input type="tel" id="customerPhone"
+            placeholder="Your phone number" required>
+
+            <select id="service" required>
+                <option value="">Select a service</option>
+                <option>Steel Gates</option>
+                <option>Windows & Burglar Proofing</option>
+                <option>Roller Shutters</option>
+                <option>Balcony Grills & Railings</option>
+                <option>Canopies & Pergolas</option>
+                <option>Steel Doors & Gatic Doors</option>
+                <option>Metal Furniture</option>
+                <option>Steel Fences</option>
+                <option>Welding & Repairs</option>
+                <option>Other Custom Work</option>
+            </select>
+
+            <input type="text" id="projectLocation"
+            placeholder="Project location">
+
+            <textarea id="projectDetails"
+            placeholder="Describe your project, measurements and design ideas..."
+            required></textarea>
+
+            <button type="submit" class="btn">
+                SEND QUOTATION REQUEST ON WHATSAPP
+            </button>
+
+            <p class="note">
+                You can attach your reference pictures manually in WhatsApp after opening the chat.
+            </p>
+
+        </form>
+    </div>
 </section>
 
 <!-- CONTACT -->
 
-<section class="section contact" id="contact">
+<section class="contact" id="contact">
 
-<h2>CONTACT AJ STEEL</h2>
+    <div class="section-title">
+        <small>GET IN TOUCH</small>
+        <h2>CONTACT AJ STEEL</h2>
+        <p>Let's discuss your next fabrication project.</p>
+    </div>
 
-<p>📍 Katwe, Kampala, Uganda</p>
+    <div class="contact-grid">
 
-<p>📞 +256 705 434 720</p>
+        <div class="contact-box">
+            <h3>PHONE / WHATSAPP</h3>
+            <p>+256 705 434 720</p>
+        </div>
 
-<p>WhatsApp: +256 705 434 720</p>
+        <div class="contact-box">
+            <h3>LOCATION</h3>
+            <p>Katwe, Kampala, Uganda</p>
+        </div>
 
-<a class="button" href="https://wa.me/256705434720">
-CHAT WITH US ON WHATSAPP
-</a>
+        <div class="contact-box">
+            <h3>WORK</h3>
+            <p>Residential, Commercial & Industrial Fabrication</p>
+        </div>
+
+    </div>
+
+    <div style="margin-top:30px;">
+        <a class="btn"
+        href="https://wa.me/256705434720">
+            CHAT WITH US
+        </a>
+    </div>
 
 </section>
 
 <footer>
+    <strong>AJ STEEL & METAL FABRICATORS</strong>
 
-<h2>AJ STEEL & METAL FABRICATORS</h2>
+    <p>Strength • Quality • Creativity</p>
 
-<p>STRENGTH • QUALITY • CREATIVITY</p>
+    <p>Katwe, Kampala, Uganda</p>
 
-<p>Katwe, Kampala, Uganda</p>
-
-<p>+256 705 434 720</p>
-
-<p>© <span id="year"></span> AJ Steel & Metal Fabricators. All Rights Reserved.</p>
-
+    <p style="margin-top:15px;font-size:12px;">
+        © <span id="year"></span> AJ Steel & Metal Fabricators.
+        All rights reserved.
+    </p>
 </footer>
 
 <a class="whatsapp"
 href="https://wa.me/256705434720"
 target="_blank">
-WhatsApp
+    WhatsApp Us
 </a>
 
 <script>
+function toggleMenu() {
+    document.getElementById("navigation").classList.toggle("active");
+}
+
+function closeMenu() {
+    document.getElementById("navigation").classList.remove("active");
+}
 
 document.getElementById("year").textContent =
 new Date().getFullYear();
 
-document.getElementById("quoteForm").addEventListener("submit",function(e){
+document.getElementById("quoteForm").addEventListener("submit", function(e) {
 
-e.preventDefault();
+    e.preventDefault();
 
-const name=document.getElementById("name").value;
-const phone=document.getElementById("phone").value;
-const service=document.getElementById("service").value;
-const measurements=document.getElementById("measurements").value;
-const location=document.getElementById("location").value;
-const details=document.getElementById("details").value;
-const photo=document.getElementById("photo").files[0];
+    const name = document.getElementById("customerName").value;
+    const phone = document.getElementById("customerPhone").value;
+    const service = document.getElementById("service").value;
+    const location = document.getElementById("projectLocation").value;
+    const details = document.getElementById("projectDetails").value;
 
-let message=
-"HELLO AJ STEEL & METAL FABRICATORS\n\n"+
-"New quotation request\n\n"+
-"Name: "+name+"\n"+
-"Phone: "+phone+"\n"+
-"Service: "+service+"\n"+
-"Measurements: "+(measurements||"Not provided")+"\n"+
-"Location: "+(location||"Not provided")+"\n"+
-"Project details: "+details+"\n\n";
+    const message =
+`Hello AJ Steel & Metal Fabricators.
 
-if(photo){
-message+="I have selected a design photo named "+photo.name+
-". I will attach it in this WhatsApp chat.";
-}
+I would like to request a quotation.
 
-const url="https://wa.me/256705434720?text="+
-encodeURIComponent(message);
+Name: ${name}
+Phone: ${phone}
+Service: ${service}
+Project Location: ${location}
 
-window.open(url,"_blank");
+Project Details:
+${details}
 
+Please contact me about this project.`;
+
+    const url = "https://wa.me/256705434720?text=" +
+    encodeURIComponent(message);
+
+    window.open(url, "_blank");
 });
-
 </script>
 
 </body>
-  </html>
+</html>
